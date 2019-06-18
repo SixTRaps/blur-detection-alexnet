@@ -2,8 +2,8 @@ import os
 import re
 import math
 
-predict_file_addr = 'predict_prob.txt'
-new_file_addr = 'average_accuracy.txt'
+predict_file_addr = '/blur/predict_prob.txt'
+new_file_addr = '/blur/average_accuracy.txt'
 
 with open(new_file_addr,'w') as f2:
     with open(predict_file_addr, 'r') as f1:
@@ -16,7 +16,14 @@ with open(new_file_addr,'w') as f2:
         count = 1
         sum = 0.0
         for i in range(totalLine):
-            if i == totalLine-1: break
+            if i == totalLine-1:
+                pos = transform_list[i][0].index('_',transform_list[i][0].index('_')+1)
+                previous_pos = transform_list[i-1][0].index('_',transform_list[i-1][0].index('_')+1)
+                if transform_list[i][0][0:pos] == transform_list[i-1][0][0:previous_pos]:
+                    break
+                else:
+                    f2.write(transform_list[i][0][0:pos]+'.jpeg' + ' ' + transform_list[i][1] + ' ' + transform_list[i][2])
+                    break
             comp1 = re.search(re.compile(r"[0-9]+"),data_list[i]).group(0)
             comp2 = re.search(re.compile(r"[0-9]+"),data_list[i+1]).group(0)
             if comp2 == comp1:

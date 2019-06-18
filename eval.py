@@ -1,7 +1,7 @@
 import os
 
 
-CONCATPATH = 'average_accuracy.txt'
+CONCATPATH = '/blur/average_accuracy.txt'
 positive = 0.0
 negative = 0.0
 true_positive = 0.0
@@ -28,5 +28,7 @@ with open(CONCATPATH, 'r') as f:
 
 accuracy = (true_positive+true_negative) / (positive+negative)
 recall = true_positive / positive
+
 print("Accuracy: %f"%accuracy)
 print("Recall: %f"%recall)
+f.close()
