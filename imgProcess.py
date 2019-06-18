@@ -7,7 +7,7 @@ from PIL import Image
 
 BASEPATH = '/'
 IMAGEPATH = os.path.join(BASEPATH+'data/')
-IMAGESAVE = os.path.join(BASEPATH+'blur/slice/')
+IMAGESAVE = os.path.join(BASEPATH+'slice/')
 
 WIDTH = 512
 HEIGHT = 512
