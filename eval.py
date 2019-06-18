@@ -1,7 +1,7 @@
 import os
 
 
-CONCATPATH = '/blur/average_accuracy.txt'
+CONCATPATH = 'average_accuracy.txt'
 positive = 0.0
 negative = 0.0
 true_positive = 0.0
