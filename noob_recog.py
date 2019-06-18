@@ -8,8 +8,7 @@ from PIL import Image
 import re
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-#BASEPATH = ""
-IMAGEPATH = "./slice/"
+IMAGEPATH = "/slice/"
 
 backend.set_image_dim_ordering('tf')
 model = load_model('noobnet_weights.h5')
