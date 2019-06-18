@@ -2,8 +2,8 @@ import os
 import re
 import math
 
-predict_file_addr = '/blur/predict_prob.txt'
-new_file_addr = '/blur/average_accuracy.txt'
+predict_file_addr = 'predict_prob.txt'
+new_file_addr = 'average_accuracy.txt'
 
 with open(new_file_addr,'w') as f2:
     with open(predict_file_addr, 'r') as f1:
