@@ -24,7 +24,7 @@ use cpu to run the training
 
 
 """
-use gpu to run the training
+use gpu to run the training. single gpu
 """
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
@@ -32,10 +32,8 @@ k.set_image_dim_ordering('th')
 
 seed = 7
 numpy.random.seed(seed)
-trainblur_directory = '/mnt/train/bad/'
-trainnoblur_directory = '/mnt/train/good/'
-#testblur_directory = '/mnt/test/bad/'
-#testnoblur_directory = '/mnt/test/good/'
+trainblur_directory = '/train/bad/'
+trainnoblur_directory = '/train/good/'
 filepath = "/blur/"
 
 num_classes = 2
